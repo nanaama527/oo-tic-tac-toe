@@ -45,7 +45,7 @@ class TicTacToe
     end
 
     def valid_move?(input_to_index)
-        !position_taken?(input_to_index) && @board[input_to_index]
+        !position_taken?(input_to_index) && input_to_index.between?(0,8)
     end
 
     def turn_count
@@ -67,7 +67,7 @@ class TicTacToe
         if valid_move?(index)
              move(index, current_player)
              else
-            turn
+            self.turn
         end
         display_board
     end
